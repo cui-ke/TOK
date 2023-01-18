@@ -1,0 +1,3122 @@
+<rdf:RDF xmlns="http://cui.unige.ch/isi/onto/tok/TOK.owl#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xml:base="http://cui.unige.ch/isi/onto/tok/TOK.owl">
+<owl:Ontology rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl">
+<owl:priorVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1.2</owl:priorVersion>
+<owl:priorVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.0</owl:priorVersion>
+<owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.0</owl:versionInfo>
+<dc:language rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</dc:language>
+<dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISI Team, Nizar Ghoula</dc:creator>
+<dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISI Team, University of Geneva, September 2010</dc:rights>
+<dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISI Team, www.cui.unige.ch/isi</dc:publisher>
+<dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontology Describing terminological and ontological Knowledge resources</dc:title>
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a new version of our Ontology, we have changed the way of representing resources, we are focusing on the fact that a resource may have different models of representations and then we have added a new class called TOK_Model that plays the role of classifying the resources, so we consider everything as a resource and the way to classify them is when thay use a certain model to be represented. We have then amodels representing ontological resources, others representing terminological resources, etc. Somehow we are just applying the main idea about our approach to ensure the openness of our ontology or global model to all kinds of resources.</rdfs:comment>
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Updated on October 1st 2014 by Nizar Ghoula</rdfs:comment>
+<owl:imports rdf:resource="http://omv.ontoware.org/2005/05/ontology"/>
+<owl:imports rdf:resource="http://omv.ontoware.org/2007/07/workflow"/>
+<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.2/Profile.owl"/>
+</owl:Ontology>
+<!--  
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+      -->
+<!--  http://purl.org/dc/elements/1.1/creator  -->
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+<!--  http://purl.org/dc/elements/1.1/language  -->
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/language"/>
+<!--  http://purl.org/dc/elements/1.1/publisher  -->
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
+<!--  http://purl.org/dc/elements/1.1/rights  -->
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+<!--  http://purl.org/dc/elements/1.1/title  -->
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+<!--  
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+      -->
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Document_Model  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Document_Model"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#alignRelation  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#alignRelation"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#aligned_to  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#aligned_to"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#alignsBetween  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#alignsBetween"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#annotatedBy  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#annotatedBy"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#annotates  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#annotates">
+<owl:inverseOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#annotatedBy"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#annotates_using  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#annotates_using"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#applied_to  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#applied_to"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#argument  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#argument"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#associated_to  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#associated_to"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#belongsTo  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#belongsTo"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#collection_of  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#collection_of"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#composedBy  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#composedBy">
+<owl:inverseOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#belongsTo"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#composedOf  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#composedOf"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#conjunction_of  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#conjunction_of"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#constants  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#constants"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#contains  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#contains"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#descibes  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#descibes"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#devided_to  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#devided_to"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#disjunction_of  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#disjunction_of">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#enriches  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#enriches"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#evolutes_in  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#evolutes_in"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#evolution_action  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#evolution_action"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#executedBy  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#executedBy"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#generalization_of  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#generalization_of">
+<rdfs:subPropertyOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#associated_to"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#generated_from  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#generated_from"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#hasDomainType  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#hasDomainType"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#hasRangeType  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#hasRangeType"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#hasValue  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#hasValue"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_Indicator  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_Indicator"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_align_source  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_align_source"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_align_target  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_align_target"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_belonging_type  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_belonging_type"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_content  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_content"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_context  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_context"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_definition  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_definition"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_documentation  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_documentation"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entity  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entity"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_equivalent_lang  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_equivalent_lang"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_formalism  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_formalism"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_index  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_index"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_label  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_label"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_language  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_language"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_lexicalForm  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_lexicalForm"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_natural_language  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_natural_language"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_part_of_speech  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_part_of_speech"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_point_of_view  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_point_of_view"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_register  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_register"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_rep_language  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_rep_language"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_representation  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_representation"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_representation_generator  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_representation_generator"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_representation_model  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_representation_model"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_scope  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_scope"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_status  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_status"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_subEntity  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_subEntity"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_subRelation  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_subRelation"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_symbol  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_symbol"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_timeCover  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_timeCover"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_topic  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_topic"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#hierarchyOf  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#hierarchyOf"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#indexes  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#indexes"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#indicates  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#indicates">
+<owl:inverseOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_Indicator"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#input  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#input"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#involved_in_alignment  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#involved_in_alignment">
+<owl:inverseOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_align_source"/>
+<owl:inverseOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_align_target"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#involved_in_evolution_action  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#involved_in_evolution_action"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#involved_in_expression  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#involved_in_expression"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#involved_in_operation  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#involved_in_operation"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#involves  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#involves"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#isInverseOf  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#isInverseOf">
+<owl:inverseOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#isInverseOf"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#is_disjointWith  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#is_disjointWith"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#is_subEntityOf  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#is_subEntityOf">
+<owl:inverseOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_subEntity"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#is_subRelationOf  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#is_subRelationOf">
+<owl:inverseOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_subRelation"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#linked_to  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#linked_to"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#object  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#object"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#onRelation  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#onRelation"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#on_Entity  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#on_Entity"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#output  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#output"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#predicate  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#predicate"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#provenance  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#provenance"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#referred_to  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#referred_to"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#related_to  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#related_to"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#restriction_of  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#restriction_of"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#source_entity  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#source_entity"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#source_language  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#source_language"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#specification_of  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#specification_of">
+<rdfs:subPropertyOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#associated_to"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#structured_by  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#structured_by"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#subject  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#subject"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#target_entity  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#target_entity"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#target_language  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#target_language"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#translation_of  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#translation_of">
+<rdfs:subPropertyOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#associated_to"/>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#treatedBy  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#treatedBy">
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this relation is an abstraction of the treatment of TOK resources using different TOK tools in many fields in order to perform a task using TOK resources on other resources like ontology driven annotation, or using TOK resources on TOK resources like resoning and chek consistency.</rdfs:comment>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#used_for_task  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#used_for_task">
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this property describes the relation between a TOK resource and the task or the usage it may be pertinent for.</rdfs:comment>
+</owl:ObjectProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#used_in_process  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#used_in_process"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_algorithm  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_algorithm"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_implementation  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_implementation"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_logical_operator  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_logical_operator"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_method  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_method"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_methodology  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_methodology"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_operator  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_operator"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_quantifier  -->
+<owl:ObjectProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_quantifier"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#conformsToKnowledgeRepresentationParadigm  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#conformsToKnowledgeRepresentationParadigm">
+<rdfs:subPropertyOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_representation_model"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#definedBy  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#definedBy">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#defines  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#defines">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#developedBy  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#developedBy">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#develops  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#develops">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#endorsedBy  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#endorsedBy">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#endorses  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#endorses">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#hasAffiliatedParty  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasAffiliatedParty"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#hasContributor  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasContributor"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#hasCreator  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasCreator"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#hasDomain  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasDomain">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#hasFormalityLevel  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasFormalityLevel">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#hasLicense  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasLicense">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#hasPriorVersion  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasPriorVersion">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#hasSyntax  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#hasSyntax"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#isBackwardCompatibleWith  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#isBackwardCompatibleWith"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#isIncompatibleWith  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#isIncompatibleWith"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#isLocatedAt  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#isLocatedAt">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#isOfType  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#isOfType"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#isSubDomainOf  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#isSubDomainOf">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  http://omv.ontoware.org/2005/05/ontology#useImports  -->
+<owl:ObjectProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#useImports">
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+</owl:ObjectProperty>
+<!--  
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+      -->
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#argument  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#argument"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#confidence  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#confidence"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#confidence_measure  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#confidence_measure">
+<rdfs:label>confidence_measure</rdfs:label>
+</owl:DatatypeProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#created_from  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#created_from"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#hasType  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#hasType"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_Method  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_Method"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_axiomnumber  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_axiomnumber">
+<rdfs:label>has_axiomnumber</rdfs:label>
+<rdfs:subPropertyOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entitynumber"/>
+</owl:DatatypeProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_conceptnumber  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_conceptnumber">
+<rdfs:label>has_conceptnumber</rdfs:label>
+<rdfs:subPropertyOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entitynumber"/>
+</owl:DatatypeProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_correspondancesnumber  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_correspondancesnumber">
+<rdfs:label>has_correspondancesnumber</rdfs:label>
+<rdfs:subPropertyOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entitynumber"/>
+</owl:DatatypeProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entitynumber  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entitynumber">
+<rdfs:label>has_entitynumber</rdfs:label>
+<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_original_file  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_original_file"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_propertynumber  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_propertynumber">
+<rdfs:label>has_propertynumber</rdfs:label>
+<rdfs:subPropertyOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entitynumber"/>
+</owl:DatatypeProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_run_date  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_run_date"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_sentencenumber  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_sentencenumber">
+<rdfs:label>has_sentencenumber</rdfs:label>
+<rdfs:subPropertyOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entitynumber"/>
+</owl:DatatypeProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_size  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_size"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_termnumber  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_termnumber">
+<rdfs:label>has_termnumber</rdfs:label>
+<rdfs:subPropertyOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entitynumber"/>
+</owl:DatatypeProperty>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#has_title  -->
+<owl:DatatypeProperty rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_title"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#URI  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#URI"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#acronym  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#creationDate  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#creationDate"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#description  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#description"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#documentation  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#keyClasses  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#keyClasses"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#keywords  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#keywords"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#knownUsage  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#knownUsage"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#modificationDate  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#modificationDate"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#name  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#name"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#naturalLanguage  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#naturalLanguage"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#notes  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#notes"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#reference  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#reference"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#resourceLocator  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#resourceLocator"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#status  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#status"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#version  -->
+<owl:DatatypeProperty rdf:about="http://omv.ontoware.org/2005/05/ontology#version"/>
+<!--  
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+      -->
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#API  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#API">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Implementation_Source"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Algorithm  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Algorithm">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Processing_Method"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Align_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Align_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Align_Relation_Symbol  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Align_Relation_Symbol">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Symbol_Indicator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#contains"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Correspondence"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_Method"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_align_source"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_align_target"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#alignsBetween"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#hasType"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this class is an abstraction of the alignment that may exist between two TOK resources.</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#AlignmentReference  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#AlignmentReference">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_To_Concept"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment_Relation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment_Relation">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment_links"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_symbol"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Align_Relation_Symbol"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment_links  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment_links">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Annotation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Annotation">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#annotates"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#annotates_using"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Annotation_Element  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Annotation_Element">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Annotation_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Annotation_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Application  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Application">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Tool"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Argument  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Argument">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Argument_Elements"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Argument_Elements  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Argument_Elements"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Associative_Rel  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Associative_Rel">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic_Relation"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource">
+<rdfs:label>Autonomous_Resource</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Axiom_Restriction  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Axiom_Restriction">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Bitext_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Bitext_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Classic_Logic  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Classic_Logic">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Close_Rel  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Close_Rel">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic_Relation"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Combination_Operator  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Combination_Operator">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Combination_Theory  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Combination_Theory">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Processing_Method"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Combined_Resource  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Combined_Resource">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<rdfs:subClassOf>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#contains"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Resource"/>
+<owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#contains"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Comparable_Corpus  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Comparable_Corpus">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Multilingual_Corpus"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Complex_Alignment  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Complex_Alignment">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#contains"/>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Complex_Correspondence"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Correspondence"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Complex_Correspondence  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Complex_Correspondence">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Correspondence"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#source_entity"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#target_entity"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Component  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Component">
+<rdfs:label>Component</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Tool"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_Hierarchy_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_Hierarchy_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_To_Concept  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_To_Concept">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_To_LexicalForm  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_To_LexicalForm">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_To_Resource  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_To_Resource">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_To_Term  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_To_Term">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Conceptual_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Conceptual_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type"/>
+<rdfs:comment xml:lang="en">a type of topic which models the concept represented by a collection of synonymous terms in a thesaurus.</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Conceptual_Graph_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Conceptual_Graph_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Connexional_Context  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Connexional_Context">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Context"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Constructor  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Constructor">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Axiom_Restriction"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#argument"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#argument"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Variable"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#argument"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Context  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Context">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Controlled_Indexing  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Controlled_Indexing">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Indexing_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Corpora_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Corpora_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Corpus  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Corpus">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corpus</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#collection_of"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_size"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_register"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Language_Register"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_timeCover"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Time_Cover"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this class is a description of the concept corpus which is a terminological resource</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Correspondence  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Correspondence">
+<rdfs:label>Correspondence</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#confidence_measure"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#alignRelation"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Meta_Alignment_Relation"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#source_entity"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#target_entity"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#alignsBetween"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Correspondence_Alignment_Relation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Correspondence_Alignment_Relation">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment_links"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_symbol"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Align_Relation_Symbol"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#confidence_measure"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#disjunction_of"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment_Relation"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#CrossReference  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#CrossReference">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Concept_To_Concept"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#DataType_Property  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#DataType_Property">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Property"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Database_Scheme_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Database_Scheme_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Defined_Concept  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Defined_Concept">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Conceptual_Entity"/>
+<owl:disjointWith rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Primitif_Concept"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Definition_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Definition_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Dempster_Shafer_Theory  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Dempster_Shafer_Theory">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Combination_Theory"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Description_Logic  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Description_Logic">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Dictionary  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Dictionary">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Dictionnary_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Dictionnary_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Disjoint_Rel  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Disjoint_Rel">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Relation"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Doc_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Doc_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Document  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Document">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Document</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_topic"/>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Domain"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Topic"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_index"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Document_Abstract  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Document_Abstract">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Document_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Document_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Document_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Document_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#indexes"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Electronic_Doc  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Electronic_Doc">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electronic_Doc</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Operator  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Operator">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Resource  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Resource">
+<rdfs:label>Enrichment_Resource</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#enriches"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#generated_from"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Extraction  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Extraction">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Extraction_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Type  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Type"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Equivalent_Rel  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Equivalent_Rel">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Relation"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Equivalent_Term  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Equivalent_Term">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Status"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Existancial_Quantifier  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Existancial_Quantifier">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Quantifier"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Extraction_Indexing  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Extraction_Indexing">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Indexing_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Extraction_Operator  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Extraction_Operator">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Factual_Expression  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Factual_Expression">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#object"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#predicate"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#subject"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#First_Order_Logic  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#First_Order_Logic">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Classic_Logic"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Form_Align  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Form_Align">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Frame_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Frame_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Composition  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Composition">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Theory"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Intersection  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Intersection">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Theory"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Theory  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Theory">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Processing_Method"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Union  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Union">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Fuzzy_Theory"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Generic_Term  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Generic_Term">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Status"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Glossary  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Glossary">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glossary</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#collection_of"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Definition_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_context"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Context"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_title"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_size"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#restriction_of"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Lexicon"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Glossary_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Glossary_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Hierarchical_Rel  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Hierarchical_Rel">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic_Relation"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Hierarchy  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Hierarchy">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hierarchy</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#hierarchyOf"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Hypertext  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Hypertext">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Hypertext_Doc  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Hypertext_Doc">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hypertext_Doc</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Implementation_Source  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Implementation_Source">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Index_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Index_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Indexing_Operator  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Indexing_Operator">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Indicator  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Indicator">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Symbol_Indicator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Methodology  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Methodology">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#developedBy"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Task  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Task">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#composedOf"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Process_Monitoring_Element"/>
+<owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Tool  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Tool">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#developedBy"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this is an abstraction of different tools that may be applied on TOK resources. The usage of tools may be various relatively to the nature of the task to perform and the nature of the resource.</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Processing_Method  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Processing_Method">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_Method"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#reference"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#developedBy"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#argument"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#modificationDate"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_original_file"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasSyntax"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Syntax"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasLicense"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasSyntax"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Syntax"/>
+<owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#resourceLocator"/>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasLicense"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#LicenseModel"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#annotatedBy"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#notes"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#version"/>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasFormalityLevel"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#status"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasCreator"/>
+<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#notes"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#URI"/>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#isBackwardCompatibleWith"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entity"/>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#isOfType"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#endorsedBy"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#creationDate"/>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#URI"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasContributor"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#treatedBy"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Tool"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#modificationDate"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#isOfType"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Types"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#status"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#useImports"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#isIncompatibleWith"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#naturalLanguage"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#resourceLocator"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#created_from"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#enriches"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasPriorVersion"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#composedBy"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#creationDate"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#involved_in_evolution_action"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Evolution_Execution"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#knownUsage"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasPriorVersion"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_rep_language"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Language"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#aligned_to"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_entitynumber"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#used_in_process"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Process_Monitoring_Element"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasDomain"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Domain"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#used_for_task"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Task"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#version"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasFormalityLevel"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#FormalityLevel"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#keywords"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#keyClasses"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#provenance"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#linked_to"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_representation_model"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Model"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_language"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasCreator"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class is an abstraction of a Terminological and Ontological resource that is used for knowledge management and engineering.</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Language_Register  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Language_Register">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#related_to"/>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Document"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Topic"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class describes the register of language covered by the corpus in use, the type of its value is a domain restriction or a specific type of tasks that describes a field of a domain.</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#LexicalForm_To_Concept  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#LexicalForm_To_Concept">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#LexicalForm_To_LexicalForm  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#LexicalForm_To_LexicalForm">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#LexicalForm_To_Resource  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#LexicalForm_To_Resource">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#LexicalForm_To_term  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#LexicalForm_To_term">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Lexical_Category  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Lexical_Category">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Word_Class"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Lexical_Form  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Lexical_Form">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_language"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Lexicon  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Lexicon">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lexicon</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_language"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_size"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#related_to"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Terminology"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Linguistic  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Linguistic">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Types"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Linguistic_Context  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Linguistic_Context">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Context"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#isOfType"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#hasDomainType"/>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#hasRangeType"/>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_subRelation"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#isInverseOf"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#is_subRelationOf"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_symbol"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Symbol_Indicator"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Approach  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Approach">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Model"/>
+<owl:disjointWith rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Expression  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Expression">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#argument"/>
+<owl:onClass>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Axiom_Restriction"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Expression"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Entity"/>
+</owl:unionOf>
+</owl:Class>
+</owl:onClass>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_logical_operator"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Operator"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Operator  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Operator">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Relation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Relation">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Meta_Alignment_Relation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Meta_Alignment_Relation">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment_links"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#conjunction_of"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Correspondence_Alignment_Relation"/>
+<owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Module_Extraction  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Module_Extraction">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Extraction_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Monolingual_Corpus  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Monolingual_Corpus">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Monolingual_Corpus</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Corpus"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_language"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#More_General_Rel  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#More_General_Rel">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Relation"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#More_Specific_Rel  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#More_Specific_Rel">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Relation"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Multilingual_Corpus  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Multilingual_Corpus">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Multilingual_Corpus</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Corpus"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#source_language"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#target_language"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Multiple_Formalisms  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Multiple_Formalisms">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Types"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Multiple_Restriction_Expression  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Multiple_Restriction_Expression">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Axiom_Restriction"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#argument"/>
+<owl:onClass>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Multiple_Restriction_Expression"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Simple_Restriction_Expression"/>
+</owl:unionOf>
+</owl:Class>
+</owl:onClass>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_logical_operator"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Operator"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Named_Concept  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Named_Concept">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Defined_Concept"/>
+<owl:disjointWith rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#UnNamed_Concept"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Language class is an abstraction of the language covered by a terminological resource it has a value in a list of languages.</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_definition"/>
+<owl:onClass>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Entity"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#isOfType"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Definition_Entity"/>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:onClass>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_natural_language"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#provenance"/>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Task"/>
+<rdf:Description rdf:about="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_context"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Context"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#isOfType"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_label"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Entity"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#isOfType"/>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Lexical_Form"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Entity"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#descibes"/>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Object"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Domain"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Topic"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Link  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Link">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Model"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Preferred_Term  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Preferred_Term">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Status"/>
+<owl:disjointWith rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Preferred_Term"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Object  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Object">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Object_Property  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Object_Property">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Property"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Ontology_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Ontology_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Overlap_Rel  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Overlap_Rel">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Relation"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Paragraph  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Paragraph">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Text_Fragment"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Parallel_Corpus  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Parallel_Corpus">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Multilingual_Corpus"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Parameter_Element  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Parameter_Element">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Argument_Elements"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#PartOfSpeech  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#PartOfSpeech">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Word_Class"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Point_Of_View  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Point_Of_View">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#keywords"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Preferred_Term  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Preferred_Term">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Status"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#descibes"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Conceptual_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Primitif_Concept  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Primitif_Concept">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Conceptual_Entity"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Process_Monitoring_Element  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Process_Monitoring_Element">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_algorithm"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Algorithm"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#input"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_method"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Processing_Method"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_run_date"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#reference"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#output"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#argument"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#executedBy"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#status"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_operator"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Program_File  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Program_File">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Implementation_Source"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Proposition_Logic  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Proposition_Logic">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Classic_Logic"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Quantifier  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Quantifier">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Reference_Relation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Reference_Relation">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#referred_to"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Hypertext_Doc"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Related_Term  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Related_Term">
+<rdfs:label>Related_Term</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Status"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Repository  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Repository">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Language  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Language">
+<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#hasSyntax"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Syntax"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_documentation"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Document"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#conformsToKnowledgeRepresentationParadigm"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Model"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#developedBy"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Model">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_representation_generator"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Operator"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment>this class represents an abstraction of the formalism of representation used to describe knowledge.</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Operator  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Operator">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Constant  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Constant">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Domain  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Domain">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#devided_to"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Point_Of_View"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#isSubDomainOf"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Domain"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#URI"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#involved_in_expression"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Expression_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#is_subEntityOf"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#isOfType"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Type"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#URI"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#evolutes_in"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Evolution_Action"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#confidence"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_belonging_type"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#definedBy"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_subEntity"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#associated_to"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Evolution_Execution  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Evolution_Execution">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#applied_to"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#endorsedBy"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#executedBy"/>
+<owl:someValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_run_date"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#evolution_action"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Evolution_Action"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#status"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#reference"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_operator"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#involves"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:unionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Export  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Export">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Import  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Import">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Individual  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Individual">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Item  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Item">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Property  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Property">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Syntax  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Syntax">
+<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#developedBy"/>
+<owl:allValuesFrom rdf:resource="http://omv.ontoware.org/2005/05/ontology#Party"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_documentation"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Document"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_To_Concept  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_To_Concept">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_To_LexicalForm  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_To_LexicalForm">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_To_Resource  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_To_Resource">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_To_Term  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_To_Term">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Aggregation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Aggregation">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Combination_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Alignment  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Alignment">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Annotation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Annotation">
+<rdfs:subClassOf>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Operator"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Indexing_Operator"/>
+</owl:intersectionOf>
+</owl:Class>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Composition  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Composition">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Combination_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Derivation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Derivation">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Evolution_Action  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Evolution_Action">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#involves"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:unionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#acronym"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#reference"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#documentation"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Intersection  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Intersection">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Combination_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Management_Operator">
+<rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.2/Profile.owl#Profile"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#description"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#name"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_methodology"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Methodology"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_implementation"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Implementation_Source"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#output"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_method"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Processing_Method"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#input"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#argument"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Object"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://omv.ontoware.org/2005/05/ontology#keywords"/>
+<owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Task or Usage, this class describes the tasks performed on/by a terminological resource, we can make a discrimination between both tasks but in our case of use these actions or tasks may be performed using TOK resources on TOK resources. Each task is iplemented by an operator.</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Merge  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Merge">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Combination_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Translation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Translation">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Enrichment_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Types  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Types"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Union  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Union">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Combination_Operator"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Role_To_Role  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Role_To_Role">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#SKOS_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#SKOS_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Scenario_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Scenario_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Scope_Note  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Scope_Note">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Status"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Script_File  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Script_File">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Implementation_Source"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Types"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic_Network_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic_Network_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic_Relation  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic_Relation">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity"/>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic_Relation"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Sentence  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Sentence">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Text_Fragment"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Sentence_Align  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Sentence_Align">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Sequence_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Sequence_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Service  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Service">
+<rdfs:label>Service</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Tool"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Simple_Alignment  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Simple_Alignment">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Alignment"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#contains"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Simple_Correspondence"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Simple_Correspondence  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Simple_Correspondence">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Correspondence"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Simple_Restriction_Expression  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Simple_Restriction_Expression">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Axiom_Restriction"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#on_Entity"/>
+<owl:onClass>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Axiom_Restriction"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Logical_Expression"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Entity"/>
+</owl:unionOf>
+</owl:Class>
+</owl:onClass>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#onRelation"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Entity"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#uses_quantifier"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Quantifier"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Situational_Context  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Situational_Context">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Context"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Specific_Language_Domain  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Specific_Language_Domain">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Specific_Term  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Specific_Term">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Status"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Symbol_Indicator  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Symbol_Indicator"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Syntactic_Category  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Syntactic_Category">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Word_Class"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#evolutes_in"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Domain"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_scope"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Scope_Note"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_part_of_speech"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Word_Class"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_lexicalForm"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Lexical_Form"/>
+<owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_status"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Status"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment xml:lang="en">a type of topic which models a single term in a resource. in a thesaurus a term is a single word or a phrase.</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Status  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Status"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_To_Concept  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_To_Concept">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_To_LexicalForm  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_To_LexicalForm">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_To_Resource  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_To_Resource">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_To_Term  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_To_Term">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Link_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Terminological  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Terminological">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Types"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Terminology  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Terminology">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terminology</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#applied_to"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Specific_Language_Domain"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#collection_of"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Terminology_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Terminology_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Text_Fragment  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Text_Fragment">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Node_Type"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Thesauri  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Thesauri">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thesauri</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#constants"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Entity"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_definition"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Semantic_Relation"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#hierarchyOf"/>
+<owl:allValuesFrom>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Conceptual_Entity"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Term_Entity"/>
+</owl:unionOf>
+</owl:Class>
+</owl:allValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Document_Model"/>
+<owl:someValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Resource"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#structured_by"/>
+<owl:allValuesFrom rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#SKOS_Model"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Thesaurus_Entity  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Thesaurus_Entity">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Entity_Belonging"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Time_Cover  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Time_Cover">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class describes the period or the intervall of time in which the language used in the corpus evoluates. this classi is important becaus it gives precision about the vitality of a language and is an important caracteristic of a corpus.</rdfs:comment>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Topic  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Topic">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Abstract_Elements"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#UML_Diagram_Model  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#UML_Diagram_Model">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#UnNamed_Concept  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#UnNamed_Concept">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Defined_Concept"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Universal_Quantifier  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Universal_Quantifier">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Quantifier"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Variable  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Variable">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Argument_Elements"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#WN_LikeModel  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#WN_LikeModel">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Web_Service  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Web_Service">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Implementation_Source"/>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#WellFormed_Corpus  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#WellFormed_Corpus">
+<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WellFormed_Corpus</rdfs:label>
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Corpus"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_size"/>
+<owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1000</owl:minQualifiedCardinality>
+<owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_language"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_timeCover"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Time_Cover"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#has_register"/>
+<owl:onClass rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Language_Register"/>
+<owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Word_Class  -->
+<owl:Class rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Word_Class"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#FormalityLevel  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#FormalityLevel"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#KnowledgeRepresentationParadigm  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#KnowledgeRepresentationParadigm">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Logical_Approach"/>
+</owl:Class>
+<!--  http://omv.ontoware.org/2005/05/ontology#LicenseModel  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#LicenseModel"/>
+<!--  http://omv.ontoware.org/2005/05/ontology#Ontology  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#Ontology">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Autonomous_Resource"/>
+</owl:Class>
+<!--  http://omv.ontoware.org/2005/05/ontology#OntologyDomain  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#OntologyDomain">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Domain"/>
+</owl:Class>
+<!--  http://omv.ontoware.org/2005/05/ontology#OntologyEngineeringMethodology  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#OntologyEngineeringMethodology">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Methodology"/>
+</owl:Class>
+<!--  http://omv.ontoware.org/2005/05/ontology#OntologyEngineeringTool  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#OntologyEngineeringTool">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Tool"/>
+</owl:Class>
+<!--  http://omv.ontoware.org/2005/05/ontology#OntologyLanguage  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#OntologyLanguage">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Representation_Language"/>
+</owl:Class>
+<!--  http://omv.ontoware.org/2005/05/ontology#OntologySyntax  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#OntologySyntax">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resource_Syntax"/>
+</owl:Class>
+<!--  http://omv.ontoware.org/2005/05/ontology#OntologyTask  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#OntologyTask">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Knowledge_Engineering_Task"/>
+</owl:Class>
+<!--  http://omv.ontoware.org/2005/05/ontology#OntologyType  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#OntologyType">
+<rdfs:subClassOf rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Resources_Types"/>
+</owl:Class>
+<!--  http://omv.ontoware.org/2005/05/ontology#Party  -->
+<owl:Class rdf:about="http://omv.ontoware.org/2005/05/ontology#Party"/>
+<!--  http://www.w3.org/2002/07/owl#Thing  -->
+<owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+<!--  
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+      -->
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Arabic  -->
+<owl:NamedIndividual rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Arabic">
+<rdf:type rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+</owl:NamedIndividual>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Edit  -->
+<owl:NamedIndividual rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Edit"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#English  -->
+<owl:NamedIndividual rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#English">
+<rdf:type rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+</owl:NamedIndividual>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#French  -->
+<owl:NamedIndividual rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#French">
+<rdf:type rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+</owl:NamedIndividual>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#German  -->
+<owl:NamedIndividual rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#German">
+<rdf:type rdf:resource="http://cui.unige.ch/isi/onto/tok/TOK.owl#Natural_Language"/>
+</owl:NamedIndividual>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Remove  -->
+<owl:NamedIndividual rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Remove"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Transaction  -->
+<owl:NamedIndividual rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Transaction"/>
+<!--  http://cui.unige.ch/isi/onto/tok/TOK.owl#Update  -->
+<owl:NamedIndividual rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Update"/>
+<!--  
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+      -->
+<rdf:Description>
+<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+<owl:members rdf:parseType="Collection">
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Equivalent_Term"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Generic_Term"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Non_Preferred_Term"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Preferred_Term"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Related_Term"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Scope_Note"/>
+<rdf:Description rdf:about="http://cui.unige.ch/isi/onto/tok/TOK.owl#Specific_Term"/>
+</owl:members>
+</rdf:Description>
+</rdf:RDF>
+<!--  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net  -->
