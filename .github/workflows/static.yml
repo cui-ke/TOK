@@ -37,7 +37,7 @@ jobs:
         with:
             image: ghcr.io/ashleycaselli/pylode:latest
             options: -v ${{ github.workspace }}:/app/pylode/data
-            run: python3.10 pylode/cli.py /app/pylode/data/o3dvt.owl.ttl -o /app/pylode/data/index.html
+            run: python3.10 pylode/cli.py /app/pylode/data/TOK.xml -o /app/pylode/data/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
